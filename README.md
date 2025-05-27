@@ -1,1 +1,0 @@
-# arturad.github.io

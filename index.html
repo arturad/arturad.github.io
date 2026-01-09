@@ -181,6 +181,23 @@
       display: block;
     }
 
+    .service-item {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background-color: var(--light);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+
+    .service-item h3 {
+      margin: 0 0 0.5rem 0;
+      color: var(--secondary);
+    }
+
+    .service-item p {
+      margin: 0;
+    }
+
     .contact-form {
       display: grid;
       gap: 1rem;
@@ -338,39 +355,21 @@
 
     <section class="services">
       <h2>Paslaugos</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3><i class="fas fa-laptop-code"></i> <span>Kompiuterinė Diagnostika</span></h3>
-          <p>Greitas ir tikslus gedimų nustatymas</p>
-        </div>
-
-        <div class="service-card">
-          <h3><i class="fas fa-exclamation-triangle"></i> <span>Klaidų Šalinimas</span></h3>
-          <p>Klaidų išvalymas ir sprendimų pasiūlymai</p>
-        </div>
-
-        <div class="service-card">
-          <h3><i class="fas fa-code"></i> <span>Programavimas</span></h3>
-          <p>Pritaikymas individualiems poreikiams</p>
-        </div>
-
-        <div class="service-card">
-          <h3><i class="fas fa-plug"></i> <span>Modulių Pririšimas</span></h3>
-          <p>Naujų dalių aktyvavimas ir integracija</p>
-        </div>
-
-        <div class="service-card">
-          <h3><i class="fas fa-tools"></i> <span>Serviso Funkcijos</span></h3>
-          <p>Serviso intervalų atstatymas ir kitos paslaugos</p>
-        </div>
-
-        <div class="service-card">
-          <h3><i class="fas fa-tint"></i> <span>Purkštukų Patikra</span></h3>
-          <p>Patikra ir restauravimas</p>
-        </div>
+      
+      <div class="service-item">
+        <h3>🔹 Serverių nuomos sprendimai</h3>
+        <p>Teikiame sukonfigūruotų virtualių serverių naudojimo paslaugą, pritaikytą individualiems klientų poreikiams.</p>
       </div>
 
-      <div id="service-details" class="service-details"></div>
+      <div class="service-item">
+        <h3>🔹 Nuotolinė interneto prieiga</h3>
+        <p>Klientams suteikiama galimybė naudotis internetu per suteiktą serverio IP adresą, naudojant nuotolinės prieigos sprendimus.</p>
+      </div>
+
+      <div class="service-item">
+        <h3>🔹 Techninis palaikymas</h3>
+        <p>Užtikriname bazinį techninį palaikymą, paslaugos veikimo priežiūrą ir konsultacijas paslaugos naudojimo metu.</p>
+      </div>
     </section>
 
     <section id="contact" class="contact">

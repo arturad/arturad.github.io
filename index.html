@@ -9,604 +9,465 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css">
   <style>
     :root {
-      --primary: #1e3a8a;
-      --secondary: #005a8d;
-      --accent: #ff6b00;
-      --light: #f9f9f9;
-      --dark: #333;
-      --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      --radius: 12px;
+      --navy: #1e3a8a;
+      --navy-text: #d3dbf0;
+      --ink: #111827;
+      --muted: #5b6474;
+      --bg: #ffffff;
+      --bg-alt: #f3f5f8;
+      --tint-navy: #e8edf9;
+      --tint-orange: #fdeee4;
+      --orange: #ea580c;
+      --orange-dark: #c2410c;
+      --radius: 14px;
+      --wrap: 1120px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Rubik', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: var(--light);
-      color: var(--dark);
+      background-color: var(--bg);
+      color: var(--ink);
       line-height: 1.6;
     }
 
-    header {
-      background-color: var(--primary);
-      color: white;
-      padding: 1rem;
+    a {
+      color: var(--navy);
+      text-underline-offset: 3px;
+    }
+
+    .wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+
+    .site-header {
+      background-color: var(--navy);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: var(--shadow);
     }
 
-    .header-content {
+    .header-inner {
       display: flex;
-      justify-content: center;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
+      justify-content: space-between;
+      height: 64px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
+    .brand {
+      color: #ffffff;
+      font-size: 1.25rem;
       font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
     }
+
+    .site-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .site-nav a {
+      color: var(--navy-text);
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .site-nav a:hover {
+      color: #ffffff;
+    }
+
+    /* Hero */
 
     .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('images/hero/workshop.avif') center/cover;
-      color: white;
-      padding: 4rem 1rem;
-      text-align: center;
-      margin-bottom: 2rem;
+      background-color: var(--navy);
+      color: #ffffff;
+      padding: 72px 0 96px;
     }
 
-    .hero-banner {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('images/hero/workshop.avif') center/cover;
-      color: white;
-      padding: 4rem 1rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      border-radius: 0;
-      /* Straight corners */
-    }
-
-    .hero h2,
-    .hero-banner h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: white;
-    }
-
-    .hero p,
-    .hero-banner p {
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      max-width: 20ch;
+      margin: 0 0 36px;
     }
 
     .btn {
-      display: inline-block;
-      background-color: var(--accent);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--orange);
+      color: #ffffff;
+      padding: 14px 24px;
+      border-radius: 10px;
       font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
     }
 
     .btn:hover {
-      background-color: #e05a00;
-      transform: translateY(-2px);
+      background-color: var(--orange-dark);
     }
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    .btn i {
+      font-size: 20px;
     }
 
-    section {
-      background-color: white;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.5rem;
-      transition: transform 0.3s;
+    /* Sections */
+
+    .section {
+      padding: 80px 0;
+      scroll-margin-top: 64px;
     }
 
-    section:hover {
-      transform: translateY(-5px);
+    .section-alt {
+      background-color: var(--bg-alt);
     }
 
-    h2 {
-      color: var(--secondary);
-      margin-top: 0;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.5rem;
-      display: inline-block;
+    .section h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin: 0 0 32px;
     }
 
-    .services-grid {
+    .about {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+      grid-template-columns: 1fr 2fr;
+      gap: 32px;
+      align-items: start;
     }
 
-    .service-card {
-      background-color: var(--light);
-      border-radius: var(--radius);
-      padding: 1.2rem;
-      border: 2px solid var(--accent);
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .service-card:hover {
-      background-color: #f0f0f0;
-      transform: translateY(-3px);
-    }
-
-    .service-card h3 {
-      margin-top: 0;
-      color: var(--secondary);
-      display: flex;
-      align-items: center;
-    }
-
-    .service-card i {
-      margin-right: 10px;
-      color: var(--accent);
-    }
-
-    .service-details {
-      background-color: #f5f5f5;
-      border-radius: var(--radius);
-      padding: 1rem;
-      margin-top: 1rem;
-      display: none;
-    }
-
-    .service-details.show {
-      display: block;
-    }
-
-    .service-item {
-      margin-top: 1.5rem;
-      padding: 1rem;
-      background-color: var(--light);
-      border-radius: var(--radius);
-      border-left: 4px solid var(--accent);
-    }
-
-    .service-item h3 {
-      margin: 0 0 0.5rem 0;
-      color: var(--secondary);
-    }
-
-    .service-item p {
+    .about h2 {
       margin: 0;
     }
 
-    .contact-form {
+    .about p {
+      font-size: 1.125rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Service cards */
+
+    .cards {
       display: grid;
-      gap: 1rem;
-      margin-top: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
+    .card {
+      background-color: var(--bg);
+      border-radius: var(--radius);
+      padding: 28px;
     }
 
-    .form-group label {
-      margin-bottom: 0.3rem;
-      font-weight: 500;
+    .section:not(.section-alt) .card {
+      background-color: var(--bg-alt);
     }
 
-    .form-group input,
-    .form-group textarea {
-      padding: 0.8rem;
-      border-radius: 6px;
-      border: 1px solid #ddd;
-      transition: border-color 0.3s, box-shadow 0.3s;
+    .icon-tile {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: var(--tint-navy);
+      color: var(--navy);
+      font-size: 24px;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--secondary);
-      box-shadow: 0 0 0 2px rgba(0, 90, 141, 0.2);
+    .icon-tile.orange {
+      background-color: var(--tint-orange);
+      color: var(--orange-dark);
     }
 
-    .form-group input.error,
-    .form-group textarea.error {
-      border-color: #ff3333;
-      background-color: #fff8f8;
+    .card h3 {
+      font-size: 1.125rem;
+      line-height: 1.35;
+      margin: 20px 0 8px;
     }
 
-    .error-message {
-      color: #ff3333;
-      font-size: 0.85rem;
-      margin-top: 0.3rem;
+    .card p {
+      color: var(--muted);
+      margin: 0;
     }
 
-    .success-message {
-      background-color: #4CAF50;
-      color: white;
-      padding: 1.2rem;
-      border-radius: 8px;
-      margin-top: 1rem;
-      animation: fadeIn 0.5s;
+    /* Contacts */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .form-group input,
-    .form-group textarea {
-      font-family: 'Rubik', sans-serif;
-    }
-
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .contact-info {
-      margin-bottom: 1rem;
-    }
-
-    .contact-item {
+    .contact-card {
       display: flex;
       align-items: center;
-      margin-bottom: 0.5rem;
+      gap: 16px;
+      background-color: var(--bg);
+      border-radius: var(--radius);
+      padding: 24px;
     }
 
-    .contact-item i {
-      width: 25px;
-      color: var(--secondary);
+    .contact-card.phones {
+      grid-row: span 3;
+      align-items: flex-start;
     }
 
-    .contact-phones {
-      align-items: baseline;
+    .contact-label {
+      color: var(--muted);
+      font-size: 0.875rem;
+      margin: 0;
     }
 
-    .contact-phones p {
-      margin-bottom: 0.3rem;
+    .contact-value {
+      font-weight: 500;
+      margin: 0;
     }
 
     .phone-list {
       list-style: none;
-      margin: 0 0 1em;
+      margin: 4px 0 0;
       padding: 0;
     }
 
-    .phone-list li {
-      margin-bottom: 0.2rem;
+    .phone-list li+li {
+      margin-top: 14px;
     }
 
     .phone-list a {
+      display: block;
+      color: var(--ink);
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-decoration: none;
       white-space: nowrap;
     }
 
+    .phone-list a:hover,
+    .contact-value a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-value a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+
     .contact-role {
-      color: #666;
+      color: var(--muted);
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: var(--primary);
-      color: white;
-      margin-top: 3rem;
+    /* Footer */
+
+    .site-footer {
+      background-color: var(--navy);
+      color: var(--navy-text);
+      padding: 28px 0;
+      font-size: 0.9rem;
     }
 
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
+    .footer-inner {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
+    .footer-inner p {
+      margin: 0;
     }
 
-    .social-links a {
-      color: white;
-      font-size: 1.3rem;
-      transition: color 0.3s;
+    .site-footer a {
+      color: var(--navy-text);
+      font-size: 24px;
+      line-height: 1;
+      text-decoration: none;
     }
 
-    .social-links a:hover {
-      color: var(--accent);
+    .site-footer a:hover {
+      color: #ffffff;
     }
 
-    @media (max-width: 768px) {
-      .services-grid {
+    @media (max-width: 860px) {
+      .cards {
         grid-template-columns: 1fr;
       }
 
-      .hero h2,
-      .hero-banner h2 {
-        font-size: 1.7rem;
+      .about {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        padding: 0 16px;
+      }
+
+      .site-nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 48px 0 64px;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card.phones {
+        grid-row: auto;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="header-content">
-      <h1>KAMSIMA</h1>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#">KAMSIMA</a>
+      <nav class="site-nav">
+        <a href="#internetines-paslaugos">Internetinės paslaugos</a>
+        <a href="#automobiliu-prekyba">Automobilių prekyba</a>
+        <a href="#contact">Kontaktai</a>
+      </nav>
     </div>
   </header>
 
-  <section class="hero-banner">
-    <h2>Internetinės Paslaugos ir Automobilių Prekyba</h2>
-    <p>MB KAMSIMA teikia informacinių technologijų paslaugas, susijusias su nuotoliniais serverių sprendimais ir jų konfigūravimu. Taip pat įmonė užsiima naudotų automobilių prekyba – siūlo techniškai tvarkingus, paruoštus važiuoti automobilius ir padeda klientams automobilio įsigijimo bei dokumentų tvarkymo klausimais.</p>
-    <a href="#contact" class="btn">Susisiekti</a>
-  </section>
-
-  <div class="container">
-    <section class="about">
-      <h2>Apie mus</h2>
-      <p>MB Kamsima teikia informacinių technologijų paslaugas, susijusias su nuotoliniais serverių sprendimais ir jų konfigūravimu.</p>
-
-    </section>
-
-    <section class="services">
-      <h2>Internetinės paslaugos</h2>
-
-      <div class="service-item">
-        <h3>🔹 Serverių nuomos sprendimai</h3>
-        <p>Teikiame sukonfigūruotų virtualių serverių naudojimo paslaugą, pritaikytą individualiems klientų poreikiams.</p>
-      </div>
-
-      <div class="service-item">
-        <h3>🔹 Nuotolinė interneto prieiga</h3>
-        <p>Klientams suteikiama galimybė naudotis internetu per suteiktą serverio IP adresą, naudojant nuotolinės prieigos sprendimus.</p>
-      </div>
-
-      <div class="service-item">
-        <h3>🔹 Techninis palaikymas</h3>
-        <p>Užtikriname bazinį techninį palaikymą, paslaugos veikimo priežiūrą ir konsultacijas paslaugos naudojimo metu.</p>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>Internetinės Paslaugos ir Automobilių Prekyba</h1>
+        <a href="#contact" class="btn">Susisiekti <i class="hgi-stroke hgi-arrow-right-01"></i></a>
       </div>
     </section>
 
-    <section class="services">
-      <h2>Automobilių prekyba</h2>
-
-      <div class="service-item">
-        <h3>🔹 Naudotų automobilių prekyba</h3>
-        <p>Užsiimame naudotų automobilių prekyba, siūlome įvairių markių ir modelių automobilius.</p>
-      </div>
-
-      <div class="service-item">
-        <h3>🔹 Automobilių techninė būklė</h3>
-        <p>Prieš parduodant automobilius patikriname jų techninę būklę, pasirūpiname technine apžiūra ir užtikriname, kad automobiliai būtų tvarkingi bei paruošti važiuoti.</p>
-      </div>
-
-      <div class="service-item">
-        <h3>🔹 Pagalba klientams</h3>
-        <p>Atsižvelgiame į klientų poreikius, padedame išsirinkti tinkamą automobilį ir sutvarkyti su jo įsigijimu susijusius dokumentus.</p>
+    <section class="section">
+      <div class="wrap about">
+        <h2>Apie mus</h2>
+        <p>MB KAMSIMA teikia informacinių technologijų paslaugas, susijusias su nuotoliniais serverių sprendimais ir jų konfigūravimu. Taip pat įmonė užsiima naudotų automobilių prekyba – siūlo techniškai tvarkingus, paruoštus važiuoti automobilius ir padeda klientams automobilio įsigijimo bei dokumentų tvarkymo klausimais.</p>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <h2>Kontaktai</h2>
-
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <p>Visoje Lietuvoje</p>
+    <section class="section section-alt" id="internetines-paslaugos">
+      <div class="wrap">
+        <h2>Internetinės paslaugos</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="icon-tile"><i class="hgi-stroke hgi-cloud-server"></i></span>
+            <h3>Serverių nuomos sprendimai</h3>
+            <p>Teikiame sukonfigūruotų virtualių serverių naudojimo paslaugą, pritaikytą individualiems klientų poreikiams.</p>
+          </article>
+          <article class="card">
+            <span class="icon-tile"><i class="hgi-stroke hgi-internet"></i></span>
+            <h3>Nuotolinė interneto prieiga</h3>
+            <p>Klientams suteikiama galimybė naudotis internetu per suteiktą serverio IP adresą, naudojant nuotolinės prieigos sprendimus.</p>
+          </article>
+          <article class="card">
+            <span class="icon-tile"><i class="hgi-stroke hgi-customer-support"></i></span>
+            <h3>Techninis palaikymas</h3>
+            <p>Užtikriname bazinį techninį palaikymą, paslaugos veikimo priežiūrą ir konsultacijas paslaugos naudojimo metu.</p>
+          </article>
         </div>
-        <div class="contact-item contact-phones">
-          <i class="fas fa-phone"></i>
-          <div>
-            <p>Telefonas:</p>
-            <ul class="phone-list">
-              <li><a href="tel:+37067361708">+37067361708</a> Artūras <span class="contact-role">pardavimai</span></li>
-              <li><a href="tel:+37068219234">+37068219234</a> Tomas <span class="contact-role">pardavimai</span></li>
-              <li><a href="tel:+37068030765">+37068030765</a> Edita <span class="contact-role">dokumentų tvarkymas</span></li>
-            </ul>
+      </div>
+    </section>
+
+    <section class="section" id="automobiliu-prekyba">
+      <div class="wrap">
+        <h2>Automobilių prekyba</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="icon-tile orange"><i class="hgi-stroke hgi-car-01"></i></span>
+            <h3>Naudotų automobilių prekyba</h3>
+            <p>Užsiimame naudotų automobilių prekyba, siūlome įvairių markių ir modelių automobilius.</p>
+          </article>
+          <article class="card">
+            <span class="icon-tile orange"><i class="hgi-stroke hgi-wrench-01"></i></span>
+            <h3>Automobilių techninė būklė</h3>
+            <p>Prieš parduodant automobilius patikriname jų techninę būklę, pasirūpiname technine apžiūra ir užtikriname, kad automobiliai būtų tvarkingi bei paruošti važiuoti.</p>
+          </article>
+          <article class="card">
+            <span class="icon-tile orange"><i class="hgi-stroke hgi-document-validation"></i></span>
+            <h3>Pagalba klientams</h3>
+            <p>Atsižvelgiame į klientų poreikius, padedame išsirinkti tinkamą automobilį ir sutvarkyti su jo įsigijimu susijusius dokumentus.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="wrap">
+        <h2>Kontaktai</h2>
+        <div class="contact-grid">
+          <div class="contact-card phones">
+            <span class="icon-tile"><i class="hgi-stroke hgi-call-02"></i></span>
+            <div>
+              <p class="contact-label">Telefonas</p>
+              <ul class="phone-list">
+                <li><a href="tel:+37067361708">+37067361708</a> Artūras <span class="contact-role">pardavimai</span></li>
+                <li><a href="tel:+37068219234">+37068219234</a> Tomas <span class="contact-role">pardavimai</span></li>
+                <li><a href="tel:+37068030765">+37068030765</a> Edita <span class="contact-role">dokumentų tvarkymas</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="icon-tile"><i class="hgi-stroke hgi-location-01"></i></span>
+            <p class="contact-value">Visoje Lietuvoje</p>
+          </div>
+          <div class="contact-card">
+            <span class="icon-tile"><i class="hgi-stroke hgi-telegram"></i></span>
+            <div>
+              <p class="contact-label">Telegram</p>
+              <p class="contact-value"><a href="https://t.me/mekigis" target="_blank" rel="noopener">@mekigis</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="icon-tile"><i class="hgi-stroke hgi-mail-01"></i></span>
+            <div>
+              <p class="contact-label">El. paštas</p>
+              <p class="contact-value"><a href="mailto:info@kamsima.lt">info@kamsima.lt</a></p>
+            </div>
           </div>
         </div>
-        <div class="contact-item">
-          <i class="fab fa-telegram"></i>
-          <p>Telegram: <a href="https://t.me/mekigis" target="_blank">@mekigis</a></p>
-        </div>
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <p>El. paštas: <a href="mailto:info@kamsima.lt">info@kamsima.lt</a></p>
-        </div>
       </div>
-
-      <form class="contact-form" id="contact-form">
-        <div class="form-group">
-          <label for="name">Vardas</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">El. paštas</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Telefonas</label>
-          <input type="tel" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Žinutė</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <!-- Formspree configuration fields -->
-        <input type="hidden" name="_subject" value="Nauja užklausa iš KAMSIMA svetainės">
-        <input type="hidden" name="_language" value="lt">
-        <input type="hidden" name="_next" value="https://kamsima.lt/?success=true">
-        <!-- Restrict submissions to come only from your domain -->
-        <input type="hidden" name="_domain" value="kamsima.lt">
-        <!-- For local development testing -->
-        <input type="hidden" name="_next" value="http://localhost:8000/?success=true">
-
-        <button type="submit" class="btn">Siųsti užklausą</button>
-        <div id="form-indicator" style="display:none;">
-          <div style="padding: 10px; background-color: #f3f3f3; border-radius: 8px; margin-top: 10px;">
-            <i class="fas fa-spinner fa-spin"></i> Siunčiama...
-          </div>
-        </div>
-      </form>
     </section>
-  </div>
+  </main>
 
-  <footer>
-    <div class="footer-content">
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=61577080256983"><i class="fab fa-facebook"></i></a>
-      </div>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
       <p>&copy; 2025 KAMSIMA. Visos teisės saugomos.</p>
+      <a href="https://www.facebook.com/profile.php?id=61577080256983" aria-label="Facebook"><i class="hgi-stroke hgi-facebook-01"></i></a>
     </div>
   </footer>
-
-  <script>
-    // Check for success parameter on page load
-    document.addEventListener('DOMContentLoaded', function () {
-      // Check if we returned from a successful form submission
-      if (window.location.search.includes('success=true') ||
-        window.location.search.includes('submitted=true')) {
-        showSuccessMessage();
-      }
-    });
-
-    // Form submission handler (for the visible form in the page)
-    document.getElementById('contact-form').addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      // Get email value for validation
-      const emailInput = document.getElementById('email');
-      const emailValue = emailInput.value.trim();
-
-      // Email validation regex pattern
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      // Validate email format
-      if (!emailPattern.test(emailValue)) {
-        // Show error message visually
-        emailInput.classList.add('error');
-
-        // Check if an error message already exists
-        let errorMsg = emailInput.nextElementSibling;
-        if (!errorMsg || !errorMsg.classList.contains('error-message')) {
-          errorMsg = document.createElement('div');
-          errorMsg.className = 'error-message';
-          errorMsg.innerText = "Prašome įvesti teisingą el. pašto adresą.";
-          emailInput.parentNode.insertBefore(errorMsg, emailInput.nextSibling);
-        }
-
-        emailInput.focus();
-        return;
-      } else {
-        // Remove error styling if valid
-        emailInput.classList.remove('error');
-
-        // Remove any error message
-        const errorMsg = emailInput.nextElementSibling;
-        if (errorMsg && errorMsg.classList.contains('error-message')) {
-          errorMsg.remove();
-        }
-      }
-
-      // Show the loading indicator
-      const formIndicator = document.getElementById('form-indicator');
-      formIndicator.style.display = 'block';
-
-      // Get form data
-      const formData = new FormData(this);
-
-      // Send the form data via fetch to avoid CORS issues
-      fetch("https://formspree.io/f/mqabdryp", {
-        method: "POST",
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-        .then(response => {
-          if (response.ok) {
-            // Show success message
-            showSuccessMessage();
-          } else {
-            // Show error message
-            alert("Klaida siunčiant formą. Bandykite dar kartą vėliau.");
-          }
-          // Hide loading indicator
-          formIndicator.style.display = 'none';
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          alert("Klaida siunčiant formą. Bandykite dar kartą vėliau.");
-          // Hide loading indicator
-          formIndicator.style.display = 'none';
-        });
-    });
-
-    // Function to show success message
-    function showSuccessMessage() {
-      const form = document.getElementById('contact-form');
-
-      // Create success message element
-      const successMsg = document.createElement('div');
-      successMsg.className = 'success-message';
-
-      // Add content to success message
-      successMsg.innerHTML = `
-        <h4 style="margin-top: 0;">Ačiū už jūsų užklausą!</h4>
-        <p>Mes susisieksime su jumis kaip įmanoma greičiau.</p>
-      `;
-
-      // Insert success message before the form
-      form.parentNode.insertBefore(successMsg, form);
-      form.reset();
-
-      // Remove success message after 5 seconds
-      setTimeout(() => {
-        successMsg.style.opacity = '0';
-        successMsg.style.transition = 'opacity 1s';
-        setTimeout(() => {
-          successMsg.remove();
-        }, 1000);
-      }, 5000);
-
-      // Remove the success parameter from URL to prevent showing the message again on refresh
-      if (window.history && window.history.replaceState) {
-        const newUrl = window.location.pathname + window.location.hash;
-        window.history.replaceState({}, document.title, newUrl);
-      }
-    }
-  </script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>KAMSIMA - Auto Diagnostika ir Programavimas</title>
+  <title>KAMSIMA - Internetinės Paslaugos ir Automobilių Prekyba</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -287,6 +287,32 @@
       color: var(--secondary);
     }
 
+    .contact-phones {
+      align-items: baseline;
+    }
+
+    .contact-phones p {
+      margin-bottom: 0.3rem;
+    }
+
+    .phone-list {
+      list-style: none;
+      margin: 0 0 1em;
+      padding: 0;
+    }
+
+    .phone-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    .phone-list a {
+      white-space: nowrap;
+    }
+
+    .contact-role {
+      color: #666;
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -341,8 +367,8 @@
   </header>
 
   <section class="hero-banner">
-    <h2>Internetinės Paslaugos</h2>
-    <p>Pagrindinė įmonės veikla yra serverių nuoma ir internetinės paslaugos.</p>
+    <h2>Internetinės Paslaugos ir Automobilių Prekyba</h2>
+    <p>MB KAMSIMA teikia informacinių technologijų paslaugas, susijusias su nuotoliniais serverių sprendimais ir jų konfigūravimu. Taip pat įmonė užsiima naudotų automobilių prekyba – siūlo techniškai tvarkingus, paruoštus važiuoti automobilius ir padeda klientams automobilio įsigijimo bei dokumentų tvarkymo klausimais.</p>
     <a href="#contact" class="btn">Susisiekti</a>
   </section>
 
@@ -354,8 +380,8 @@
     </section>
 
     <section class="services">
-      <h2>Paslaugos</h2>
-      
+      <h2>Internetinės paslaugos</h2>
+
       <div class="service-item">
         <h3>🔹 Serverių nuomos sprendimai</h3>
         <p>Teikiame sukonfigūruotų virtualių serverių naudojimo paslaugą, pritaikytą individualiems klientų poreikiams.</p>
@@ -372,6 +398,25 @@
       </div>
     </section>
 
+    <section class="services">
+      <h2>Automobilių prekyba</h2>
+
+      <div class="service-item">
+        <h3>🔹 Naudotų automobilių prekyba</h3>
+        <p>Užsiimame naudotų automobilių prekyba, siūlome įvairių markių ir modelių automobilius.</p>
+      </div>
+
+      <div class="service-item">
+        <h3>🔹 Automobilių techninė būklė</h3>
+        <p>Prieš parduodant automobilius patikriname jų techninę būklę, pasirūpiname technine apžiūra ir užtikriname, kad automobiliai būtų tvarkingi bei paruošti važiuoti.</p>
+      </div>
+
+      <div class="service-item">
+        <h3>🔹 Pagalba klientams</h3>
+        <p>Atsižvelgiame į klientų poreikius, padedame išsirinkti tinkamą automobilį ir sutvarkyti su jo įsigijimu susijusius dokumentus.</p>
+      </div>
+    </section>
+
     <section id="contact" class="contact">
       <h2>Kontaktai</h2>
 
@@ -380,9 +425,16 @@
           <i class="fas fa-map-marker-alt"></i>
           <p>Visoje Lietuvoje</p>
         </div>
-        <div class="contact-item">
+        <div class="contact-item contact-phones">
           <i class="fas fa-phone"></i>
-          <p>Telefonas: <a href="tel:+37068030765">+37068030765</a></p>
+          <div>
+            <p>Telefonas:</p>
+            <ul class="phone-list">
+              <li><a href="tel:+37067361708">+37067361708</a> Artūras <span class="contact-role">pardavimai</span></li>
+              <li><a href="tel:+37068219234">+37068219234</a> Tomas <span class="contact-role">pardavimai</span></li>
+              <li><a href="tel:+37068030765">+37068030765</a> Edita <span class="contact-role">dokumentų tvarkymas</span></li>
+            </ul>
+          </div>
         </div>
         <div class="contact-item">
           <i class="fab fa-telegram"></i>
